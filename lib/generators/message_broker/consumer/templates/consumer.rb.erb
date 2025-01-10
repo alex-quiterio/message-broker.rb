@@ -1,0 +1,13 @@
+class Consumers::<%= consumer_file_header %>
+  include MessageBroker::ConsumerJob
+
+  @queue = :<%= queue_name %>
+
+  # Subscribe to kafka topic
+  subscribe :topic => :<%= topic_name %>,
+            :event => :<%= event_name %>
+
+  def self.process(message)
+    # Do something with message['payload']
+  end
+end

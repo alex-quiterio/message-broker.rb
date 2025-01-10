@@ -1,0 +1,10 @@
+class Producers::<%= producer_file_header %>
+  include MessageBroker::ProducerJob
+
+  @queue = :<%= queue_name %>
+
+  def self.process(options = {})
+    # Use produce method to send message to kafka
+    # produce(:payload => payload, :key => user.id)
+  end
+end

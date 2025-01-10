@@ -1,0 +1,13 @@
+require 'MessageBroker'
+
+# Eager load all consumers
+Dir['./app/jobs/consumers/**/*.rb'].each { |file| require file }
+
+config = SDK::Config.message_broker
+
+message_broker.kafka = Kafka.new(config.brokers)
+message_broker.consumer_group_id = config.consumer_group
+message_broker.consumer_topic_names_prefix = config.consumer_prefix
+message_broker.producer_topic_names_prefix = config.producer_prefix
+message_broker.queue_prefix = config.queue_prefix
+message_broker.logger = SDK::Logger
