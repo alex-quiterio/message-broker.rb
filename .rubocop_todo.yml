@@ -1,0 +1,54 @@
+Lint/ToJSON:
+ Exclude:
+   - 'lib/message_broker/message.rb'
+
+# Offense count: 1
+Metrics/AbcSize:
+  Max: 22
+
+# Offense count: 7
+# Configuration parameters: CountComments, ExcludedMethods.
+Metrics/BlockLength:
+  Max: 61
+
+# Offense count: 1
+# Configuration parameters: CountComments.
+Metrics/MethodLength:
+  Max: 12
+
+# Offense count: 13
+Style/Documentation:
+  Exclude:
+    - 'spec/**/*'
+    - 'test/**/*'
+    - 'lib/generators/message_broker/consumer/consumer_generator.rb'
+    - 'lib/generators/message_broker/install/install_generator.rb'
+    - 'lib/generators/message_broker/producer/producer_generator.rb'
+    - 'lib/message_broker.rb'
+    - 'lib/message_broker/backpressure_manager.rb'
+    - 'lib/message_broker/bus.rb'
+    - 'lib/message_broker/consumer.rb'
+    - 'lib/message_broker/consumer_job.rb'
+    - 'lib/message_broker/message.rb'
+    - 'lib/message_broker/producer_job.rb'
+    - 'lib/message_broker/railtie.rb'
+
+# Offense count: 1
+# Cop supports --auto-correct.
+Style/IfUnlessModifier:
+  Exclude:
+    - 'lib/tasks/message_broker.rake'
+
+# Offense count: 11
+# Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
+# URISchemes: http, https
+Metrics/LineLength:
+  Max: 100
+
+Style/SafeNavigation:
+  Exclude:
+    - '**/*'
+
+Style/MutableConstant:
+  Exclude:
+   - '**/*'
